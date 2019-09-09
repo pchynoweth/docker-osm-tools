@@ -6,11 +6,17 @@ RUN apt-get update && apt-get install -y \
     zlib1g-dev git npm nodejs
 
 WORKDIR /root
-RUN npm install -g mapshaper
+
 RUN git clone https://github.com/mapbox/tippecanoe.git && \
     cd tippecanoe && make && make install && \
     cd .. && rm -rf tippecanoe
 
+RUN mkdir tmp && cd tmp && \
+    wget https://github.com/OSGeo/proj-datumgrid/releases/download/europe-1.4/proj-datumgrid-europe-1.4.tar.gz && \
+    tar -xf proj-datumgrid-europe-1.4.tar.gz && rm *.tar.gz && \
+    cd .. && cp tmp/* /usr/share/proj/ && rm -rf tmp
+
+RUN npm install -g mapshaper geobuf topojson-client topojson-server
 COPY entrypoint.sh /root/entrypoint.sh
 
 ENTRYPOINT [ "/root/entrypoint.sh" ]

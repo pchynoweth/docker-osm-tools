@@ -6,11 +6,17 @@ Docker image containing common OSM tools
 
 ## Included tools
 
-* gdal-dev (including ogrinfo and ogr2ogr)
-* mapshaper
-* osmctools (including osmconvert and osmfilter)
-* osmium
-* tippecanoe (Copyright (c) 2014, Mapbox Inc.)
+* [geobuf](https://github.com/mapbox/geobuf)
+* [geo2topo](https://github.com/topojson/topojson-server)
+* [gdal-dev](https://github.com/OSGeo/gdal) (including ogrinfo and ogr2ogr)
+* [mapshaper](https://github.com/mbloch/mapshaper)
+* [osmctools](https://gitlab.com/osm-c-tools/osmctools) (including osmconvert and osmfilter)
+* [osmium](https://github.com/osmcode/osmium-tool)
+* [tippecanoe](https://github.com/mapbox/tippecanoe) (Copyright (c) 2014, Mapbox Inc.)
+* [topo2geo](https://github.com/topojson/topojson-client)
+
+## Additional proj dataum grids
+* [proj-datumgrid-europe](https://github.com/OSGeo/proj-datumgrid)
 
 ## Example usage
 
